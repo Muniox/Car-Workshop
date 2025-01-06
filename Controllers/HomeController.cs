@@ -1,8 +1,8 @@
-using CarWorkshop.MVC.Models;
+using CarWorkshop.Presentation.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace CarWorkshop.MVC.Controllers
+namespace CarWorkshop.Presentation.Controllers
 {
     public class HomeController : Controller
     {

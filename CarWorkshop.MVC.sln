@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35521.163 d17.12
+VisualStudioVersion = 17.12.35521.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarWorkshop.MVC", "CarWorkshop.MVC.csproj", "{19967EBF-CFD6-409D-B0F5-BA421AC65713}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarWorkshop.Presentation", "CarWorkshop.Presentation.csproj", "{19967EBF-CFD6-409D-B0F5-BA421AC65713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarWorkshop.Domain", "..\CarWorkshop.Domain\CarWorkshop.Domain.csproj", "{22A4A228-9D91-4DA8-BD96-F9E14FC26149}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarWorkshop.Application", "..\CarWorkshop.Application\CarWorkshop.Application.csproj", "{AF61F834-7B97-487A-9DDA-CE459EAB9683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarWorkshop.Infrastructure", "..\CarWorkShop.Infrastructure\CarWorkshop.Infrastructure.csproj", "{3F586E44-8626-4243-B79C-742336C3FDB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{19967EBF-CFD6-409D-B0F5-BA421AC65713}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19967EBF-CFD6-409D-B0F5-BA421AC65713}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19967EBF-CFD6-409D-B0F5-BA421AC65713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A4A228-9D91-4DA8-BD96-F9E14FC26149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A4A228-9D91-4DA8-BD96-F9E14FC26149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A4A228-9D91-4DA8-BD96-F9E14FC26149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A4A228-9D91-4DA8-BD96-F9E14FC26149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF61F834-7B97-487A-9DDA-CE459EAB9683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF61F834-7B97-487A-9DDA-CE459EAB9683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF61F834-7B97-487A-9DDA-CE459EAB9683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF61F834-7B97-487A-9DDA-CE459EAB9683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F586E44-8626-4243-B79C-742336C3FDB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F586E44-8626-4243-B79C-742336C3FDB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F586E44-8626-4243-B79C-742336C3FDB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F586E44-8626-4243-B79C-742336C3FDB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

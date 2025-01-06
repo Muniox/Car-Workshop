@@ -1,4 +1,4 @@
-﻿namespace CarWorkshop.MVC.Models
+﻿namespace CarWorkshop.Presentation.Models
 {
     public class Message
     {
