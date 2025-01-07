@@ -34,5 +34,10 @@ namespace CarWorkshop.Infrastructure.Repositories
         {
             return await _dbContext.CarWorkshops.FirstAsync(cw => cw.EncodedName.ToLower() == encodedName.ToLower());
         }
+
+        public async Task Commit()
+        {
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }
