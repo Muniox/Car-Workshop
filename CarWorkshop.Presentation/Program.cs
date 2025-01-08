@@ -44,7 +44,9 @@ namespace CarWorkshop.Presentation
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            await app.RunAsync();
+            app.MapRazorPages();
+
+            app.Run();
         }
     }
 }
