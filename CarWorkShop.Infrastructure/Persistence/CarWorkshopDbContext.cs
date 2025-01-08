@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 namespace CarWorkshop.Infrastructure.Persistence
 {
-    public class CarWorkshopDbContext : DbContext
+    public class CarWorkshopDbContext : IdentityDbContext
     {
         public CarWorkshopDbContext(DbContextOptions<CarWorkshopDbContext> options) : base(options)
         {
@@ -14,6 +15,8 @@ namespace CarWorkshop.Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.HasCharSet(CharSet.Utf8Mb4, DelegationModes.ApplyToColumns);
             modelBuilder.UseCollation("utf8mb4_unicode_ci", DelegationModes.ApplyToColumns);
             modelBuilder.Entity<CarWorkshop.Domain.Entities.CarWorkshop>()

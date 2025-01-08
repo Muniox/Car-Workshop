@@ -2,6 +2,7 @@
 using CarWorkshop.Infrastructure.Persistence;
 using CarWorkshop.Infrastructure.Repositories;
 using CarWorkshop.Infrastructure.Seeders;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,9 @@ namespace CarWorkshop.Infrastructure.Extensions
                     configuration.GetConnectionString("CarWorkshop"),
                     new MariaDbServerVersion(new Version(10, 5, 0))
                     ));
+
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddEntityFrameworkStores<CarWorkshopDbContext>();
 
             services.AddScoped<CarWorkshopSeeder>();
 
