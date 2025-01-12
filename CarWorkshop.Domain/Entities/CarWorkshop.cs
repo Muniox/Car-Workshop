@@ -1,4 +1,6 @@
-﻿namespace CarWorkshop.Domain.Entities
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace CarWorkshop.Domain.Entities
 {
     public class CarWorkshop
     {
@@ -9,6 +11,9 @@
         public CarWorkshopContactDetails ContactDetails { get; set; } = default!;
 
         public string? About { get; set; }
+
+        public string? CreatedById { get; set; }
+        public IdentityUser? CreatedBy { get; set; }
 
         public string EncodedName { get; private set; } = default!;
 

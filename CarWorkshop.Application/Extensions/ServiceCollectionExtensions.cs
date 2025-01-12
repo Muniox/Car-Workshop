@@ -1,4 +1,6 @@
-﻿using CarWorkshop.Application.CarWorkshop.Commands.CreateCarWorkshop;
+﻿using AutoMapper;
+using CarWorkshop.Application.ApplicationUser;
+using CarWorkshop.Application.CarWorkshop.Commands.CreateCarWorkshop;
 using CarWorkshop.Application.Mappings;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -12,7 +14,14 @@ namespace CarWorkshop.Application.Extensions
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining(typeof(CreateCarWorkshopCommand)));
 
-            services.AddAutoMapper(typeof(CarWorkshopMappingProfile));
+            //services.AddAutoMapper(typeof(CarWorkshopMappingProfile));
+            services.AddScoped(provider => new MapperConfiguration(config =>
+            {
+                var scope = provider.CreateScope();
+                var userContect = scope.ServiceProvider.GetRequiredService<IUserContext>();
+                config.AddProfile(new CarWorkshopMappingProfile(userContect));
+            }).CreateMapper()
+            ); //własna konfiguracja mappera
 
             services.AddValidatorsFromAssemblyContaining<CreateCarWorkshopCommandValidator>()
                 .AddFluentValidationAutoValidation()
