@@ -45,6 +45,7 @@ namespace CarWorkshop.Presentation.Controllers
             }
 
             await _mediator.Send(command);
+
             return RedirectToAction(nameof(Index));
         }
 
