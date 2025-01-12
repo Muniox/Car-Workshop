@@ -9,9 +9,11 @@ namespace CarWorkshop.Infrastructure.Persistence
         public CarWorkshopDbContext(DbContextOptions<CarWorkshopDbContext> options) : base(options)
         {
             CarWorkshops = Set<CarWorkshop.Domain.Entities.CarWorkshop>();
+            Services = Set<CarWorkshop.Domain.Entities.CarWorkshopService>();
         }
 
-        public DbSet<CarWorkshop.Domain.Entities.CarWorkshop> CarWorkshops { get; set; }
+        public DbSet<Domain.Entities.CarWorkshop> CarWorkshops { get; set; }
+        public DbSet<Domain.Entities.CarWorkshopService> Services { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -21,6 +23,12 @@ namespace CarWorkshop.Infrastructure.Persistence
             modelBuilder.UseCollation("utf8mb4_unicode_ci", DelegationModes.ApplyToColumns);
             modelBuilder.Entity<CarWorkshop.Domain.Entities.CarWorkshop>()
                 .OwnsOne(c => c.ContactDetails);
+
+            // dodawanie relacji fluent api
+            modelBuilder.Entity<CarWorkshop.Domain.Entities.CarWorkshop>()
+                .HasMany(c => c.Services)
+                .WithOne(c => c.CarWorkshop)
+                .HasForeignKey(s => s.CarWorkshopId);
         }
     }
 }
