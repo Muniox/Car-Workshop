@@ -51,7 +51,11 @@
 
 <div>
     <partial name="_CreateCarWorkshopService" model="new CreateCarWorkshopServiceCommand() { CarWorkshopEndodedName = Model.EncodedName }" />
-    <a asp-action="Index" class="brn btn-secondary">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary" data-encodedName ="@Model.EncodedName">Back to List</a>
+</div>
+
+<div id="services" class="row">
+
 </div>
 
 @section Scripts {

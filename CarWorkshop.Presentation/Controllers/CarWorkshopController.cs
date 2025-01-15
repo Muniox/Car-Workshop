@@ -4,6 +4,7 @@ using CarWorkshop.Application.CarWorkshop.Commands.EditCarWorkshop;
 using CarWorkshop.Application.CarWorkshop.Queries.GetAllCarWorkShops;
 using CarWorkshop.Application.CarWorkshop.Queries.GetCarWorkshopByEncodedName;
 using CarWorkshop.Application.CarWorkshopService.Commands;
+using CarWorkshop.Application.CarWorkshopService.Queries.GetCarWorkshopServices;
 using CarWorkshop.Presentation.Extensions;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -103,6 +104,14 @@ namespace CarWorkshop.Presentation.Controllers
             await _mediator.Send(command);
 
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("CarWorkshop/{encodedName}/CarWorkshopService")]
+        public async Task<IActionResult> GetCarWorkshopService(string encodedName)
+        {
+            var data = await _mediator.Send(new GetCarWorkshopServicesQuery() { EncodedName = encodedName });
+            return Ok(data);
         }
     }
 }
