@@ -4,7 +4,7 @@
 
         $.ajax({
             url: $(this).attr('action'),
-            type: $(this).attr('method')
+            type: $(this).attr('method'),
             data: $(this).serialize(),
             success: function (data) {
                 toastr["success"]("Created carworkshop service")
@@ -13,5 +13,5 @@
                 toastr["error"]("Something went wrong")
             }
         })
-    })
-})
+    });
+});

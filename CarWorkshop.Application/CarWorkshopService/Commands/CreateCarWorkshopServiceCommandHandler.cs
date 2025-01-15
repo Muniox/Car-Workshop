@@ -23,7 +23,7 @@ namespace CarWorkshop.Application.CarWorkshopService.Commands
             var user = _userContext.GetCurrentUser();
             var isEditable = user != null && (carWorkshop.CreatedById == user.Id || user.IsAInRole("Moderator"));
 
-            if (isEditable)
+            if (!isEditable)
             {
                 return;
             }
