@@ -49,14 +49,14 @@
     </div>
 </div>
 
-<div>
+<div class="m-3">
     <partial name="_CreateCarWorkshopService" model="new CreateCarWorkshopServiceCommand() { CarWorkshopEndodedName = Model.EncodedName }" />
-    <a asp-action="Index" class="btn btn-secondary" data-encodedName ="@Model.EncodedName">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>
 
-<div id="services" class="row">
+<h3>Services:</h3>
 
-</div>
+<div id="services" class="row" data-encoded-name="@Model.EncodedName"></div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
