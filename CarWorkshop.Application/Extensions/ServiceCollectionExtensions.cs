@@ -16,11 +16,11 @@ namespace CarWorkshop.Application.Extensions
 
             //services.AddAutoMapper(typeof(CarWorkshopMappingProfile));
             services.AddScoped(provider => new MapperConfiguration(config =>
-            {
-                var scope = provider.CreateScope();
-                var userContect = scope.ServiceProvider.GetRequiredService<IUserContext>();
-                config.AddProfile(new CarWorkshopMappingProfile(userContect));
-            }).CreateMapper()
+                {
+                    var scope = provider.CreateScope();
+                    var userContext = scope.ServiceProvider.GetRequiredService<IUserContext>();
+                    config.AddProfile(new CarWorkshopMappingProfile(userContext));
+                }).CreateMapper()
             ); //własna konfiguracja mappera
 
             services.AddValidatorsFromAssemblyContaining<CreateCarWorkshopCommandValidator>()
