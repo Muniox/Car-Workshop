@@ -7,7 +7,7 @@ using CarWorkshop.Domain.Entities;
 
 namespace CarWorkshop.Application.Mappings
 {
-    internal class CarWorkshopMappingProfile : Profile
+    public class CarWorkshopMappingProfile : Profile
     {
         public CarWorkshopMappingProfile(IUserContext userContext)
         {
